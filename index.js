@@ -4,8 +4,8 @@ const app = express();
 const testMiddleware = (req,res,next)=>{
 const date= new Date()
 const day = date.getDay()
-const hour= date.getHours()
-if(day===7 || day===6 && hour<9  || hour>17)
+ const hour= date.getHours()
+if(day===7 || day===6 && hour >= 9 || hour <= 17)
     res.redirect('/error')
 else next()
 }
